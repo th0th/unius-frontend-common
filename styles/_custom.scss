@@ -1,69 +1,70 @@
 @import "base";
 
 :root, [data-bs-theme="light"] {
-    --header-height: 4rem;
-    --#{$prefix}body-color-subtle: #{$body-color-subtle};
-    --#{$prefix}box-shadow: #{$box-shadow};
+  --header-height: 4rem;
+  --#{$prefix}body-color-subtle: #{$body-color-subtle};
+  --#{$prefix}box-shadow: #{$box-shadow};
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+    --#{$prefix}body-color-subtle: #{$body-color-subtle-dark};
+    --#{$prefix}box-shadow: #{$box-shadow-dark};
   }
-  
-  @if $enable-dark-mode {
-    @include color-mode(dark, true) {
-      --#{$prefix}body-color-subtle: #{$body-color-subtle-dark};
-      --#{$prefix}box-shadow: #{$box-shadow-dark};
+}
+
+.dropdown-item {
+  font-weight: $font-weight-medium;
+}
+
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+p {
+  &:has(+ ul) {
+    margin-block-end: 0.5em;
+  }
+
+  &:not(:has(+ ul)) {
+    &:not(:last-child) {
+      margin-block-end: 1em;
     }
   }
-  
-  .dropdown-item {
-    font-weight: $font-weight-medium;
+}
+
+.btn-unstyled {
+  @extend .border-0;
+  @extend .p-0;
+
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+}
+
+.list-group-item-action {
+  &:focus {
+    background-color: inherit;
   }
-  
-  [id] {
-    scroll-margin-top: var(--header-height);
+
+  &:focus-visible {
+    background-color: var(--#{$prefix}list-group-action-hover-bg);
   }
-  
-  p {
-    &:has(+ ul) {
-      margin-block-end: 0.5em;
-    }
-  
-    &:not(:has(+ ul)) {
-      &:not(:last-child) {
-        margin-block-end: 1em;
-      }
-    }
+}
+
+.d-webkit-box {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.modal-backdrop, .offcanvas-backdrop {
+  @extend .backdrop-blur;
+}
+
+fieldset:disabled {
+  input, select, textarea {
+    cursor: not-allowed;
   }
-  
-  .btn-unstyled {
-    background: transparent;
-    border: 0;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    padding: 0;
-    text-align: inherit;
-  }
-  
-  .list-group-item-action {
-    &:focus {
-      background-color: inherit;
-    }
-  
-    &:focus-visible {
-      background-color: var(--#{$prefix}list-group-action-hover-bg);
-    }
-  }
-  
-  .d-webkit-box {
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-  }
-  
-  .modal-backdrop, .offcanvas-backdrop {
-    @extend .backdrop-blur;
-  }
-  
-  fieldset:disabled {
-    input, select, textarea {
-      cursor: not-allowed;
-    }
-  }
+}

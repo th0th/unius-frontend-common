@@ -1,12 +1,11 @@
 {
-  "dependencies": {
+  "name": "@uniushq/frontend-common",
+  "optionalDependencies": {
     "bootstrap": "^5.3.3",
     "highlight.js": "^11.10.0",
     "react-datepicker": "^7.3.0"
   },
-  "name": "@uniushq/frontend-common",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  },
-  "version": "1.0.0"
+  }
 }
