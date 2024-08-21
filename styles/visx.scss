@@ -1,0 +1,9 @@
+.visx-axis-tick {
+  text {
+    @extend .fs-8;
+    @extend .fw-medium;
+
+    fill: currentcolor;
+    font-family: inherit;
+  }
+}
