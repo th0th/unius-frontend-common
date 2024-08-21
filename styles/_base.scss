@@ -1,4 +1,4 @@
-@import "./variables";
+@import "variables";
 @import "bootstrap/scss/maps";
 
 $utilities-text-colors: map-merge(map-loop($utilities-text, rgba-css-var, "$key", "text"), (

@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "highlight.js": "^11.10.0",
+    "react-datepicker": "^7.3.0"
   },
   "name": "@uniushq/frontend-common",
   "publishConfig": {
